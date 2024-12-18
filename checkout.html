@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - Fales Xiters</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #1e1e1e;
+      color: #f9f9f9;
+    }
+    .container {
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #333;
+      border-radius: 10px;
+    }
+    h1 { text-align: center; color: #fff; }
+    .details, .total { font-size: 16px; margin: 20px; color: #bbb; }
+    .timer { color: #ffcc00; text-align: center; margin-top: 15px; }
+    .btn-container { text-align: center; margin: 20px; }
+    .btn {
+      display: inline-block; padding: 12px; background: #27ae60; color: #fff;
+      border-radius: 5px; text-decoration: none; cursor: pointer;
+    }
+    .btn:hover { background: #219150; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Checkout - Fales Xiters</h1>
+    <div class="details">
+      <p><strong>Nome:</strong> <span id="name"></span></p>
+      <p><strong>E-mail:</strong> <span id="email"></span></p>
+      <p><strong>Telefone:</strong> <span id="phone"></span></p>
+    </div>
+    <div class="timer" id="timer">QR Code expira em: 30:00</div>
+    <div class="btn-container">
+      <a href="index.html" class="btn">Voltar para a tela inicial</a>
+    </div>
+  </div>
+  <script>
+    // Exibir dados do formulário
+    const urlParams = new URLSearchParams(window.location.search);
+    document.getElementById("name").textContent = urlParams.get("name");
+    document.getElementById("email").textContent = urlParams.get("email");
+    document.getElementById("phone").textContent = urlParams.get("phone");
+
+    // Timer de 30 minutos
+    let timeLeft = 30 * 60;
+    const timerElement = document.getElementById("timer");
+    const updateTimer = () => {
+      const minutes = Math.floor(timeLeft / 60);
+      const seconds = timeLeft % 60;
+      timerElement.textContent = `QR Code expira em: ${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+      timeLeft--;
+      if (timeLeft < 0) clearInterval(timerInterval);
+    };
+    const timerInterval = setInterval(updateTimer, 1000);
+  </script>
+</body>
+</html>

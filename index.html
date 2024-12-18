@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fales Xiters - Página de Venda</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+    h1 {
+      text-align: center;
+      color: #555;
+      margin-bottom: 20px;
+    }
+    .product {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .product img {
+      width: 200px;
+      height: auto;
+      border-radius: 10px;
+      margin-right: 20px;
+    }
+    .product-details {
+      flex: 1;
+    }
+    .product-title {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+    .product-description {
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: #666;
+    }
+    .product-price {
+      font-size: 20px;
+      color: #27ae60;
+      margin-bottom: 20px;
+    }
+    .btn {
+      display: inline-block;
+      width: 100%;
+      padding: 10px 20px;
+      font-size: 18px;
+      color: #fff;
+      background: #27ae60;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+    }
+    .btn:hover {
+      background: #219150;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Fales Xiters - Oferta Especial</h1>
+    <div class="product">
+      <img src="https://i.ibb.co/47LJVBQ/977d7cdf-e740-4397-b13a-b0c7a212fffb.webp" alt="Produto Fales Xiters">
+      <div class="product-details">
+        <h2 class="product-title">Xit Exclusivo da Fales Xiters</h2>
+        <p class="product-description">Adquira nosso xit premium para melhorar sua experiência!</p>
+        <p class="product-price">Apenas R$ 25,00</p>
+      </div>
+    </div>
+    <form action="checkout.html" method="GET">
+      <label for="name">Nome Completo</label>
+      <input type="text" id="name" name="name" placeholder="Digite seu nome completo" required>
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+      <label for="phone">Número de Telefone</label>
+      <input type="tel" id="phone" name="phone" placeholder="Digite seu número de telefone" required>
+      <button type="submit" class="btn">Comprar Agora</button>
+    </form>
+  </div>
+</body>
+</html>
